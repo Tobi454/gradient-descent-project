@@ -56,7 +56,7 @@ if run:
     st.metric("Final x-value",x)
     st.metric("Final function value",f(x))
     st.metric("Iterations performed",i)
-    st.metric("Converged",converged)
+    st.metric("Converged(at minimum)",converged)
 
 
     x_axis = np.linspace(-10,10)
@@ -66,7 +66,7 @@ if run:
     fig, ax = plt.subplots()
 
 
-    ax.plot(x_axis, y_axis, label="f(x) = x²")
+    ax.plot(x_axis, y_axis)
 
 
     ax.plot(x_history,y_history,marker="o",color="orange",label="Optimization path")
@@ -77,7 +77,7 @@ if run:
    
     ax.scatter(x_history[-1],y_history[-1],color="red",s=70,label="Final point",zorder=5)
 
-    ax.set_title("Gradient Descent on f(x) = x²")
+    ax.set_title("Gradient Descent")
     ax.set_xlabel("x")
     ax.set_ylabel("f(x)")
     ax.legend()
